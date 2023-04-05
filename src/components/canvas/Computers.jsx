@@ -19,6 +19,12 @@ const Computers = () => {
         castShadow
         shadow-mapSize-width={1024}
       />
+      {/* <primitive
+        object={computer.scene}
+        scale={2}
+        position={[0, -3.25, 0]}
+        rotation={[0.3, 0, 0]}
+      /> */}
       <primitive
         object={computer.scene}
         scale={0.75}
@@ -38,6 +44,7 @@ const ComputersCanvas = () => {
       gl={{ preserveDrawingBuffer: true }}
     >
       <Suspense fallback={<CanvasLoader />}>
+        {/* <OrbitControls enableZoom={true} autoRotate /> */}
         <OrbitControls
           enableZoom={false}
           maxPolarAngle={Math.PI / 2}
