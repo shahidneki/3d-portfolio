@@ -45,12 +45,18 @@ const Contact = () => {
       }
 
       const data = await response.json();
-      console.log(data); // do something with the response data
-
+      console.log(data);
       setLoading(false);
+      alert("Thank you. I will get back to you as soon as possible.");
+      setForm({
+        name: "",
+        email: "",
+        message: "",
+      });
     } catch (error) {
       console.error(error);
       setLoading(false);
+      alert("Hmm, something went wrong. Please try again later.");
     }
   };
 
