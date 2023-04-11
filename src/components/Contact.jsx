@@ -27,36 +27,73 @@ const Contact = () => {
     });
   };
 
+  const [formErrors, setFormErrors] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const validateForm = () => {
+    let errors = {};
+    let isValid = true;
+
+    if (!form.name) {
+      errors.name = "Name is required";
+      isValid = false;
+    }
+
+    if (!form.email) {
+      errors.email = "Email is required";
+      isValid = false;
+    } else if (!/\S+@\S+\.\S+/.test(form.email)) {
+      errors.email = "Invalid email format";
+      isValid = false;
+    }
+
+    if (!form.message) {
+      errors.message = "Message is required";
+      isValid = false;
+    }
+
+    setFormErrors(errors);
+
+    return isValid;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
-    try {
-      const response = await fetch("/api/handler", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(form),
-      });
+    if (validateForm()) {
+      try {
+        const response = await fetch("/api/handler", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(form),
+        });
 
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+
+        const data = await response.json();
+        console.log(data);
+        setLoading(false);
+        alert("Thank you. I will get back to you as soon as possible.");
+        setForm({
+          name: "",
+          email: "",
+          message: "",
+        });
+      } catch (error) {
+        console.error(error);
+        setLoading(false);
+        alert("Hmm, something went wrong. Please try again later.");
       }
-
-      const data = await response.json();
-      console.log(data);
+    } else {
       setLoading(false);
-      alert("Thank you. I will get back to you as soon as possible.");
-      setForm({
-        name: "",
-        email: "",
-        message: "",
-      });
-    } catch (error) {
-      console.error(error);
-      setLoading(false);
-      alert("Hmm, something went wrong. Please try again later.");
     }
   };
 
@@ -116,8 +153,13 @@ const Contact = () => {
               value={form.name}
               onChange={handleChange}
               placeholder="What's your name?"
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+              className={`bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium ${
+                formErrors.name && "border-red-500"
+              }`}
             />
+            {formErrors.name && (
+              <span className="text-red-500 text-sm">{formErrors.name}</span>
+            )}
           </label>
           <label className="flex flex-col">
             <span className="text-white font-medium mb-4">Your email</span>
@@ -129,7 +171,11 @@ const Contact = () => {
               placeholder="What's your email?"
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />
+            {formErrors.email && (
+              <span className="text-red-500 text-sm">{formErrors.email}</span>
+            )}
           </label>
+
           <label className="flex flex-col">
             <span className="text-white font-medium mb-4">Your Message</span>
             <textarea
@@ -138,8 +184,13 @@ const Contact = () => {
               value={form.message}
               onChange={handleChange}
               placeholder="What would you like to say?"
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+              className={`bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium ${
+                formErrors.message && "border-red-500"
+              }`}
             />
+            {formErrors.message && (
+              <span className="text-red-500 text-sm">{formErrors.message}</span>
+            )}
           </label>
 
           <button
