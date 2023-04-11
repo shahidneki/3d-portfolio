@@ -10,7 +10,7 @@ apiKey.apiKey = process.env.SENDINBLUE_API_KEY;
 const tranEmailApi = new Sib.TransactionalEmailsApi();
 
 const sender = {
-  email: "shahidneki@gmail.com",
+  email: process.env.EMAIL_RECIPIENT,
 };
 
 export default async (req, res) => {
@@ -19,7 +19,7 @@ export default async (req, res) => {
 
     const receivers = [
       {
-        email: "shahidneki@gmail.com",
+        email: process.env.EMAIL_RECIPIENT,
       },
     ];
 

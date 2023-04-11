@@ -116,17 +116,13 @@ const technologies = [
 
 const experiences = [
   {
-    title: "React.js Developer",
-    company_name: "Starbucks",
+    title: "Software Engineer",
+    company_name: "Dematic",
     icon: starbucks,
     iconBg: "#383E56",
-    date: "March 2020 - April 2021",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
+    date: "Jan 2022 - Present",
+    points:
+      "Dematic is an American supplier of materials handling systems, software and services. With a growth rate of 21.2% in 2021 Dematic was listed as the world's second-largest materials handling systems supplier with a revenue of 3.2 billion USD.",
   },
   {
     title: "React Native Developer",
