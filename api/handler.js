@@ -26,7 +26,7 @@ export default async (req, res) => {
     const emailData = {
       sender,
       to: receivers,
-      subject: `New message from ${name}`,
+      subject: `New message from ${name} from shahidneki.com`,
       htmlContent: `<html><body><p><b>Name:</b> ${name}</p><p><b>Email:</b> ${email}</p><p><b>Message:</b> ${message}</p></body></html>`,
     };
 
