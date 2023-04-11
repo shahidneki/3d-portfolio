@@ -22,10 +22,10 @@ const Navbar = () => {
           }}
         >
           <img src={logo} alt="logo" className="w-12 h-12 object-contain" />
-          <p className="text-white text-[18px] font-bold cursor-pointer flex">
+          {/* <p className="text-white text-[18px] font-bold cursor-pointer flex">
             Shahid Neki &nbsp;
             <span className="sm:block hidden">| Software Engineer</span>
-          </p>
+          </p> */}
         </Link>
 
         <ul className="list-none hidden sm:flex flex-row gap-10">
