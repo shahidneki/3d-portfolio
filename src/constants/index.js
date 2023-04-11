@@ -23,6 +23,8 @@ import {
   jobit,
   tripguide,
   threejs,
+  dematic,
+  euroaromas,
 } from "../assets";
 
 export const navLinks = [
@@ -118,50 +120,20 @@ const experiences = [
   {
     title: "Software Engineer",
     company_name: "Dematic",
-    icon: starbucks,
-    iconBg: "#383E56",
+    icon: dematic,
+    iconBg: "white",
     date: "Jan 2022 - Present",
     points:
       "Dematic is an American supplier of materials handling systems, software and services. With a growth rate of 21.2% in 2021 Dematic was listed as the world's second-largest materials handling systems supplier with a revenue of 3.2 billion USD.",
   },
   {
-    title: "React Native Developer",
-    company_name: "Tesla",
-    icon: tesla,
-    iconBg: "#E6DEDD",
+    title: "Junior Software Developer",
+    company_name: "Euro Aromas",
+    icon: euroaromas,
+    iconBg: "white",
     date: "Jan 2021 - Feb 2022",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "Web Developer",
-    company_name: "Shopify",
-    icon: shopify,
-    iconBg: "#383E56",
-    date: "Jan 2022 - Jan 2023",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "Full stack Developer",
-    company_name: "Meta",
-    icon: meta,
-    iconBg: "#E6DEDD",
-    date: "Jan 2023 - Present",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
+    points:
+      "Euro Aromas is a company that specializes in producing a variety of chemical compounds such as aldehydes, esters, and ionones, among others. They offer their products at competitive prices and prioritize ensuring prompt supply to their customers. Euro Aromas takes pride in their products being internationally recognized and exported globally.",
   },
 ];
 
